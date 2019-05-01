@@ -48,7 +48,7 @@ pipeline {
             steps {
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube.yml',
+                    configs: 'train-schedule-service-canary.yml',
                     enableConfigSubstitution: true
                    )   
                 }
@@ -67,7 +67,7 @@ pipeline {
                 milestone(1)
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube.yml',
+                    configs: 'train-schedule-service-canary.yml',
                     enableConfigSubstitution: true
                    )                
                 kubernetesDeploy(
