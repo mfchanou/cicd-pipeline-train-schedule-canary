@@ -51,15 +51,13 @@ pipeline {
                     configs: 'train-schedule-service-canary.yml',
                     enableConfigSubstitution: true
                    )   
-                }
-            }
+             }
         }        
         stage('DeployToProduction') {
             when {
                 branch 'master'
             }
-            environment {
-                
+            environment {               
                CANARY_REPLICAS = 0
             }
             steps {
